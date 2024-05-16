@@ -17,7 +17,7 @@ type templateData struct {
 func (app *application) render(w http.ResponseWriter, t string, td *templateData) {
 	var tmpl *template.Template
 
-	// if we are using the template cache, try to get the template from our map, stored in the receiver
+	// if we are using the template cache, try to get the template from our map, stored in the receiver (app)
 	if app.config.useCache {
 		if templateFromMap, ok := app.templateMap[t]; ok {
 			tmpl = templateFromMap
